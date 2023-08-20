@@ -77,7 +77,7 @@ with st.expander("Target Distribution in keywords"):
     st.pyplot(fig)
     train.drop(columns=['target_mean'], inplace=True)
 
-st.caption("The keyword column can be quite misleading. For example I would assume that the keywords \'explode'\, \'rescue'\ and \'crushed'\ are related to a disaster. However, by looking at the plot we can see that the tweets with these keywords were mostly labeled as non-disaster related. For now I wont use it as a feature")
+st.caption("The keyword column can be quite misleading. For example I would assume that the keywords \'explode\', \'rescue\' and \'crushed\' are related to a disaster. However, by looking at the plot we can see that the tweets with these keywords were mostly labeled as non-disaster related. For now I wont use it as a feature")
 # Overall target distribution and count in the training set
 with st.expander("Overall Target Distribution"):
     fig, axes = plt.subplots(ncols=2, figsize=(15, 5))
