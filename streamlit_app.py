@@ -230,12 +230,6 @@ if submitted_parameters:
     X_test_seq = tokenizer.texts_to_sequences(X_test)
     X_test_pad = pad_sequences(X_test_seq, maxlen=max_length, padding=padding_type, truncating=trunc_type)
 
-    # Convert data to NumPy arrays
-    X_train_pad = np.array(X_train_pad)
-    y_train = np.array(y_train)
-    X_test_pad = np.array(X_test_pad)
-    y_test = np.array(y_test)
-
     # Train the model
     history = model.fit(X_train_pad, y_train, epochs=num_epochs, validation_data=(X_test_pad, y_test), verbose=2)
     
