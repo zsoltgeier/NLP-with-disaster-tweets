@@ -5,7 +5,7 @@ This repository contains the code and resources for my submissions to Kaggle's [
 ## Notebooks
 
 ### 1. Neural Network
-- [Notebook_NN](https://github.com/zsoltgeier/NLP-with-disaster-tweets/blob/main/Notebooks/naive_bayes_solution.ipynb): This Jupyter notebook contains the code for my second highest scoring scoring submission using a custom **Neural Network** model.
+- [Notebook_NN](https://github.com/zsoltgeier/NLP-with-disaster-tweets/blob/main/Notebooks/neural_network_solution.ipynb): This Jupyter notebook contains the code for my second highest scoring scoring submission using a custom **Neural Network** model.
 
 ### 2. TF-IDF and Multinomial Naive Bayes
 - [Notebook_NB](https://github.com/zsoltgeier/NLP-with-disaster-tweets/blob/main/Notebooks/naive_bayes_solution.ipynb): This Jupyter notebook contains the code for my top scoring submission using **TF-IDF** vectorization and a **Multinomial Naive Bayes** model.
