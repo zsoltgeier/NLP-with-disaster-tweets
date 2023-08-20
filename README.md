@@ -5,10 +5,10 @@ This repository contains the code and resources for my submissions to Kaggle's [
 ## Notebooks
 
 ### 1. Neural Network
-- [Notebook_NN](notebooks/neural_network_solution.ipynb): This Jupyter notebook contains the code for my second highest scoring scoring submission using a custom **Neural Network** model.
+- [Notebook_NN](https://github.com/zsoltgeier/NLP-with-disaster-tweets/blob/main/Notebooks/naive_bayes_solution.ipynb): This Jupyter notebook contains the code for my second highest scoring scoring submission using a custom **Neural Network** model.
 
 ### 2. TF-IDF and Multinomial Naive Bayes
-- [Notebook_NB](notebooks/tfidf_multinomial_nb.ipynb): This Jupyter notebook contains the code for my top scoring submission using **TF-IDF** vectorization and a **Multinomial Naive Bayes** model.
+- [Notebook_NB](https://github.com/zsoltgeier/NLP-with-disaster-tweets/blob/main/Notebooks/naive_bayes_solution.ipynb): This Jupyter notebook contains the code for my top scoring submission using **TF-IDF** vectorization and a **Multinomial Naive Bayes** model.
 
 ## Streamlit App
 
@@ -16,7 +16,7 @@ I have also deployed a Streamlit app to showcase my **Neural Network** submissio
 
 ## Cleaned Python Scripts
 
-You can find the cleaned python scripts of the notebooks in the [scripts](scripts/) directory.
+You can find the cleaned python scripts of the notebooks in the [scripts](https://github.com/zsoltgeier/NLP-with-disaster-tweets/tree/main/Scripts) directory.
 
 ## Model and Vectorization Combinations
 
@@ -32,7 +32,7 @@ Here's a summary of the scores achieved with different model and vectorization c
 
 ## Requirements
 
-To run the notebooks and scripts, make sure to install the required packages listed in [requirements.txt](requirements.txt) using the following command:
+To run the notebooks and scripts, make sure to install the required packages listed in [requirements.txt](https://github.com/zsoltgeier/NLP-with-disaster-tweets/blob/main/requirements.txt) using the following command:
 
 ```bash
 pip install -r requirements.txt
