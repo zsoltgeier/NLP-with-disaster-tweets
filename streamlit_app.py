@@ -16,6 +16,7 @@ sns.set_palette("Set2")
 plt.style.use('ggplot')
 
 # Title and description
+st.sidebar.title("by Zsolt Geier")
 st.title("Disaster Tweet Analysis with Neural Networks")
 st.markdown("This Streamlit app showcases my submission for [Kaggle's Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started) competition. Using a neural network, I analyze tweets to determine whether they are related to real disasters or not.")
 # Load and Display Data
