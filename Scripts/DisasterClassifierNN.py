@@ -2,7 +2,7 @@ import pandas as pd
 import re
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import f1_score
+from sklearn.metrics import classification_report
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -106,12 +106,16 @@ class DisasterClassifierNN:
         binary_predictions = (predictions > 0.5).astype(int)
         return binary_predictions
     
-    def evaluate_model(self, X_test, y_test):
-        y_pred = self.model.predict(X_test)
-        binary_predictions = (y_pred > 0.5).astype(int)
-        f1 = f1_score(y_test, binary_predictions)
-        print(f"F1 Score on test set: {f1}")
-        return f1
+    def evaluate_model(self, X_train, y_train, X_test, y_test):
+        y_pred_test = self.model.predict(X_test)
+        y_pred_test_binary = (y_pred_test > 0.5).astype(int)
+        y_pred_train = self.model.predict(X_train)
+        y_pred_train_binary = (y_pred_train > 0.5).astype(int)
+        report_train = classification_report(y_train, y_pred_train_binary)
+        report_test = classification_report(y_test, y_pred_test_binary)
+
+        print("Classification Report on Training Set:\n", report_train)
+        print("Classification Report on Test Set:\n", report_test)
 
     def generate_submission(self, predictions):
         sample_submission = pd.read_csv(self.submission_file_path)
@@ -122,7 +126,7 @@ class DisasterClassifierNN:
         train, test = disaster_classifier.load_data()
         X_train, y_train, X_test, y_test = disaster_classifier.prepare_data(train, test)
         disaster_classifier.train_model(X_train, y_train, X_test, y_test)
-        disaster_classifier.evaluate_model(X_test, y_test)
+        disaster_classifier.evaluate_model(X_train, y_train, X_test, y_test)
         predictions = disaster_classifier.make_predictions(test)
         disaster_classifier.generate_submission(predictions)
 
