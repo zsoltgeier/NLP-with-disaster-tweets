@@ -7,7 +7,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, classification_report
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -321,6 +321,12 @@ if submitted_parameters:
 
         y_pred_test = model.predict(X_test_pad)
         y_pred_test_binary = (y_pred_test > 0.5).astype(int)
+
+        report_train = classification_report(y_train, y_pred_train_binary)
+        report_test = classification_report(y_test, y_pred_test_binary)
+
+        print("Classification Report on Training Set:\n", report_train)
+        print("Classification Report on Test Set:\n", report_test)
 
         class_labels = ['Negative', 'Positive']
 
