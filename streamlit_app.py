@@ -325,8 +325,11 @@ if submitted_parameters:
         report_train = classification_report(y_train, y_pred_train_binary)
         report_test = classification_report(y_test, y_pred_test_binary)
 
-        st.write("Classification Report on Training Set:\n", report_train)
-        st.write("Classification Report on Test Set:\n", report_test)
+        st.write("Classification Report on Training Set:")
+        st.write(report_train)
+
+        st.write("Classification Report on Test Set:")
+        st.write(report_test)
 
         class_labels = ['Negative', 'Positive']
 
