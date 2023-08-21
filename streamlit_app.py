@@ -262,23 +262,43 @@ if submitted_parameters:
     # Model Evaluation Section (if applicable)
     with st.expander("Model Evaluation on training and validation sets:"):
 
-        # Display training and validation accuracy and loss plots
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
-        ax1.plot(history.history['accuracy'], label='Training Accuracy')
-        ax1.plot(history.history['val_accuracy'], label='Validation Accuracy')
-        ax1.set_xlabel(range(1, len('Epochs') + 1))
-        ax1.set_ylabel('Accuracy')
-        ax1.legend()
-        ax1.set_title('Training and Validation Accuracy')
+        # Extract training history
+        training_loss = history.history['loss']
+        validation_loss = history.history['val_loss']
+        training_accuracy = history.history['accuracy']
+        validation_accuracy = history.history['val_accuracy']
 
-        ax2.plot(history.history['loss'], label='Training Loss')
-        ax2.plot(history.history['val_loss'], label='Validation Loss')
-        ax2.set_xlabel(range(1, len('Epochs') + 1))
-        ax2.set_ylabel('Loss')
-        ax2.legend()
-        ax2.set_title('Training and Validation Loss')
+        # Number of epochs
+        epochs = range(1, len(training_loss) + 1)
 
-        st.pyplot(fig)
+        # Create a figure with two subplots
+        plt.figure(figsize=(12, 6))
+
+        # Plot the Loss subplot
+        plt.subplot(1, 2, 1)
+        plt.plot(epochs, training_loss, marker='o',label='Training Loss')
+        plt.plot(epochs, validation_loss, label='Validation Loss')
+        plt.title('Training and Validation Loss')
+        plt.xlabel('Epochs')
+        plt.ylabel('Loss')
+        plt.legend()
+        plt.grid(True)
+
+        # Plot the Accuracy subplot
+        plt.subplot(1, 2, 2)
+        plt.plot(epochs, training_accuracy, marker='o',label='Training Accuracy')
+        plt.plot(epochs, validation_accuracy, label='Validation Accuracy')
+        plt.title('Training and Validation Accuracy')
+        plt.xlabel('Epochs')
+        plt.ylabel('Accuracy')
+        plt.legend()
+        plt.grid(True)
+
+        # Adjust layout
+        plt.tight_layout()
+
+        # Display the plot
+        st.pyplot(plt)
 
         # Display other evaluation metrics, confusion matrices, etc.
         # Function to plot confusion matrix with F1 score
