@@ -322,14 +322,14 @@ if submitted_parameters:
         y_pred_test = model.predict(X_test_pad)
         y_pred_test_binary = (y_pred_test > 0.5).astype(int)
 
-        report_train = classification_report(y_train, y_pred_train_binary)
-        report_test = classification_report(y_test, y_pred_test_binary)
+        report_train = classification_report(y_train, y_pred_train_binary, output_dict=True)
+        report_test = classification_report(y_test, y_pred_test_binary, output_dict=True)
 
-        st.write("Classification Report on Training Set:")
-        st.write(report_train)
+        df_train = pd.DataFrame(report_train).transpose()
+        st.dataframe(df_train)
 
-        st.write("Classification Report on Test Set:")
-        st.write(report_test)
+        df_test = pd.DataFrame(report_test).transpose()
+        st.dataframe(df_test)
 
         class_labels = ['Negative', 'Positive']
 
