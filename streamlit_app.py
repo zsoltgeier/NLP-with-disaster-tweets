@@ -122,6 +122,11 @@ with st.expander("Word Count in Tweets"):
 st.caption('TODO: Experiment with feature engineering')
 
 # Define function for text cleaning
+# References:
+# https://monkeylearn.com/blog/text-cleaning/
+# https://stackoverflow.com/a/47091370
+# https://stackoverflow.com/a/49146722
+
 def clean_text(text):
     #removal of url
     text = re.sub('https?://\S+|www\.\S+', '', text)
