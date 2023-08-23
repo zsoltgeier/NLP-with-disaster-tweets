@@ -21,6 +21,11 @@ class DisasterClassifierNN:
         test = pd.read_csv(self.test_path)
         return train, test
 
+
+    # References:
+    # https://monkeylearn.com/blog/text-cleaning/
+    # https://stackoverflow.com/a/47091370
+    # https://stackoverflow.com/a/49146722
     def clean_text(self, text):
         text = re.sub('https?://\S+|www\.\S+', '', text)
         text = re.sub(r"won\'t", " will not", text)
