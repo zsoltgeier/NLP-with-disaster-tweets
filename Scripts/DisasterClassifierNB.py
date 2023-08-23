@@ -1,11 +1,18 @@
 import pandas as pd
+# For more information, visit https://pandas.pydata.org/
+
 import re
+# For more information, visit https://docs.python.org/3/library/re.html
+
 import nltk
 from nltk.corpus import stopwords
+# For more information, visit https://www.nltk.org/
+
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report
+#For more information, visit https://scikit-learn.org/stable/
 
 class DisasterClassifierNB:
     def __init__(self, train_data_path, test_data_path):
