@@ -20,6 +20,10 @@ class DisasterClassifierNB:
         self.train = pd.read_csv(self.train_data_path)
         self.test = pd.read_csv(self.test_data_path)
 
+    # References:
+    # https://monkeylearn.com/blog/text-cleaning/
+    # https://stackoverflow.com/a/47091370
+    # https://stackoverflow.com/a/49146722
     def clean_text(self, text):
         text = re.sub('https?://\S+|www\.\S+', '', text)
         text = re.sub(r"won\'t", " will not", text)
@@ -64,6 +68,7 @@ class DisasterClassifierNB:
         text = text.lower()
         return text
 
+    # Reference: https://stackoverflow.com/a/5486535
     def text_preprocessing(self, text):
         tokenizer = nltk.tokenize.RegexpTokenizer(r'\w+')
         cleaned_text = self.clean_text(text)
