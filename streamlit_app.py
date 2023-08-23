@@ -1,15 +1,31 @@
 # Import necessary libraries
 import streamlit as st
+#For more information, visit https://streamlit.io/
+
 import pandas as pd
-import re
+# For more information, visit https://pandas.pydata.org/
+
 import numpy as np
-import tensorflow as tf
-import matplotlib.pyplot as plt
-import seaborn as sns
+# For more information, visit https://numpy.org/
+
+import re
+# For more information, visit https://docs.python.org/3/library/re.html
+
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, f1_score, classification_report
+#For more information, visit https://scikit-learn.org/stable/
+
+import tensorflow as tf
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+#For more informaton, visit https://www.tensorflow.org/
+
+import matplotlib.pyplot as plt
+#For more information, visit https://matplotlib.org/
+
+import seaborn as sns
+#For more information, visit https://seaborn.pydata.org/
+
 
 # Set style
 sns.set_palette("Set2")
