@@ -1,10 +1,17 @@
 import pandas as pd
+# For more information, visit https://pandas.pydata.org/
+
 import re
+# For more information, visit https://docs.python.org/3/library/re.html
+
 import tensorflow as tf
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+#For more informaton, visit https://www.tensorflow.org/
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+#For more information, visit https://scikit-learn.org/stable/
 
 class DisasterClassifierNN:
     def __init__(self, train_path, test_path, submission_file_path, vocab_size=10000, max_length=50):
