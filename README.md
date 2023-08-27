@@ -24,8 +24,8 @@ Here's a summary of the scores achieved with different model and vectorization c
 
 | Model                        | Vectorization              | Accuracy   |
 | ---------------------------- | -------------------------- | ---------- |
-| Multinomial Naive Bayes      | TF-IDF                     | **79.83%** |
-| Neural Network               | Tokenization and Padding   | **79.62%** |
+| Multinomial Naive Bayes      | TF-IDF                     | **80,17%** |
+| Neural Network               | Embedding                  | **79.62%** |
 | Multinomial Naive Bayes      | CountVectorizer            | **78.33%** |
 | Logistic Regression          | CountVectorizer            | **73.49%** |
 | Logistic Regression          | TF-IDF                     | **71.19%** |
