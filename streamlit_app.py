@@ -95,23 +95,23 @@ st.caption('The location column has too many missing and unique values, so I won
 
 # st.caption("The keyword column can be quite misleading. For example I would assume that the keywords \'explode\', \'rescue\' and \'crushed\' are related to a disaster. However, by looking at the plot we can see that the tweets with these keywords were mostly labeled as non-disaster related. For now I wont use it as a feature")
 # Overall target distribution and count in the training set
-with st.expander("Overall Target Distribution"):
-    fig, axes = plt.subplots(ncols=2, figsize=(15, 5))
+# with st.expander("Overall Target Distribution"):
+#     fig, axes = plt.subplots(ncols=2, figsize=(15, 5))
 
-    train.groupby('target').count()['id'].plot(kind='pie', ax=axes[0], labels=['Not Disaster', 'Disaster'], autopct='%1.1f%%')
-    sns.countplot(x=train['target'], hue=train['target'], ax=axes[1])
+#     train.groupby('target').count()['id'].plot(kind='pie', ax=axes[0], labels=['Not Disaster', 'Disaster'], autopct='%1.1f%%')
+#     sns.countplot(x=train['target'], hue=train['target'], ax=axes[1])
 
-    axes[0].set_ylabel('')
-    axes[1].set_ylabel('')
-    axes[1].set_xticklabels(['Not Disaster', 'Disaster'])
-    for ax in axes:
-        ax.tick_params(axis='x', labelsize=12)
-        ax.tick_params(axis='y', labelsize=12)
+#     axes[0].set_ylabel('')
+#     axes[1].set_ylabel('')
+#     axes[1].set_xticklabels(['Not Disaster', 'Disaster'])
+#     for ax in axes:
+#         ax.tick_params(axis='x', labelsize=12)
+#         ax.tick_params(axis='y', labelsize=12)
 
-    axes[0].set_title('Target Distribution in Training Set', fontsize=13)
-    axes[1].set_title('Target Count in Training Set', fontsize=13)
+#     axes[0].set_title('Target Distribution in Training Set', fontsize=13)
+#     axes[1].set_title('Target Count in Training Set', fontsize=13)
 
-    st.pyplot(fig)
+#     st.pyplot(fig)
 
 with st.expander("Example Tweets"):
     disaster_tweets = train[train['target'] == 1]['text']
