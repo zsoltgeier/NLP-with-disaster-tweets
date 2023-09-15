@@ -71,29 +71,29 @@ with st.expander("Unique Values"):
 st.caption('The location column has too many missing and unique values, so I wont use it as a feature.')
 
 # Target distribution in keywords
-with st.expander("Target Distribution in keywords"):
-    train['target_mean'] = train.groupby('keyword')['target'].transform('mean')
-    # Get 20 evenly distributed keywords
-    num_keywords = 20
-    unique_keywords = train['keyword'].unique()
-    step = len(unique_keywords) // num_keywords
-    selected_keywords = unique_keywords[::step]
+# with st.expander("Target Distribution in keywords"):
+#     train['target_mean'] = train.groupby('keyword')['target'].transform('mean')
+#     # Get 20 evenly distributed keywords
+#     num_keywords = 20
+#     unique_keywords = train['keyword'].unique()
+#     step = len(unique_keywords) // num_keywords
+#     selected_keywords = unique_keywords[::step]
 
-    filtered_train = train[train['keyword'].isin(selected_keywords)]
+#     filtered_train = train[train['keyword'].isin(selected_keywords)]
 
-    fig = plt.figure(figsize=(10, 8))
-    ax = sns.countplot(
-        y=filtered_train.sort_values(by='target_mean', ascending=False)['keyword'],
-        hue=filtered_train.sort_values(by='target_mean', ascending=False)['target']
-    )
-    plt.xlabel("Count")
-    plt.ylabel("Keywords")
-    plt.title('Target Distribution in Keywords')
-    plt.legend(loc=1)
-    st.pyplot(fig)
-    train.drop(columns=['target_mean'], inplace=True)
+#     fig = plt.figure(figsize=(10, 8))
+#     ax = sns.countplot(
+#         y=filtered_train.sort_values(by='target_mean', ascending=False)['keyword'],
+#         hue=filtered_train.sort_values(by='target_mean', ascending=False)['target']
+#     )
+#     plt.xlabel("Count")
+#     plt.ylabel("Keywords")
+#     plt.title('Target Distribution in Keywords')
+#     plt.legend(loc=1)
+#     st.pyplot(fig)
+#     train.drop(columns=['target_mean'], inplace=True)
 
-st.caption("The keyword column can be quite misleading. For example I would assume that the keywords \'explode\', \'rescue\' and \'crushed\' are related to a disaster. However, by looking at the plot we can see that the tweets with these keywords were mostly labeled as non-disaster related. For now I wont use it as a feature")
+# st.caption("The keyword column can be quite misleading. For example I would assume that the keywords \'explode\', \'rescue\' and \'crushed\' are related to a disaster. However, by looking at the plot we can see that the tweets with these keywords were mostly labeled as non-disaster related. For now I wont use it as a feature")
 # Overall target distribution and count in the training set
 with st.expander("Overall Target Distribution"):
     fig, axes = plt.subplots(ncols=2, figsize=(15, 5))
